@@ -101,18 +101,17 @@
 <div class="container-fluid test">
   
 
-<div class="container features "  fxLayout="row">
-  <H3 class="text-center" >Why Choose US</H3>
-<div class="row">  
-  <div class="card col-md-4 " *ngFor="let item of featuresData">
-    <div class="card-body">
-          <h5 class="card-title"><img src="{{item.img}}" id="about" alt="">&nbsp;{{item.heading}}</h5>
-          <p id="info">{{item.info}}</p>
+  <div class="container features "  fxLayout="row">
+    <H3 class="text-center" >Why Choose US</H3>
+    <div class="row">  
+      <div class="card col-md-4 " *ngFor="let item of featuresData">
+        <div class="card-body">
+              <h5 class="card-title"><img src="{{item.img}}" id="about" alt="">&nbsp;{{item.heading}}</h5>
+              <p id="info">{{item.info}}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  </div>
-</div>
-</div> 
 </div>
 <div class="container-fluid staff">
   <h5 align="center">Our Awesome Teachers</h5>
@@ -165,9 +164,19 @@
         </div>
       </div>
   </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="com-md-6">
+        <agm-map [latitude]="lat" [longitude]="lng" style="height: 600px;">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div>
+      <div class="com-md-6"></div>
+    </div>
+
+  </div>
+
   
-
-
   <div @myInsertRemoveTrigger *ngIf="isShown" class="insert-remove-container">
     <p>The box is inserted</p>
   </div>
