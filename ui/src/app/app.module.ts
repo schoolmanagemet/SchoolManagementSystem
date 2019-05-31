@@ -7,12 +7,14 @@ import { FrontendComponent, popup } from './frontend/frontend.component';
 import { MatCardModule, MatButtonModule, MatDialogModule, MatDialogActions, MatFormFieldModule, MatDividerModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from "@agm/core";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontendComponent,
-    popup
+    popup,
+    LoginComponent
   ],
   entryComponents: [popup],
   imports: [

@@ -43,28 +43,24 @@ export class FrontendComponent implements OnInit {
     { img: 'assets/icons/school-bus.png', heading: 'Tansportation', info: 'We Have Transportation Facility For Students' },
     { img: 'assets/icons/hotel.png', heading: 'Hostel Facility', info: 'We provide Hostel Facility dsajdhj' },
     { img: 'assets/icons/computer.png', heading: 'Digital Teaching', info: 'We teach Students Through New Digital Ways' },
-
-
-
   ];
 
   teachersData: Object[] = [
-    { img: 'https://avatars3.githubusercontent.com/u/25137297?s=400&u=bb73ea02096fc57a67136d041658606300da465f&v=4', name: 'Shubham Digole', profile: 'Web developer', description: 'fdsfdsfd' },
-    { img: 'https://avatars3.githubusercontent.com/u/25137297?s=400&u=bb73ea02096fc57a67136d041658606300da465f&v=4', name: 'Shubham Digole', profile: 'Web developer', description: 'fdsfdsfd' },
-    { img: 'https://avatars3.githubusercontent.com/u/25137297?s=400&u=bb73ea02096fc57a67136d041658606300da465f&v=4', name: 'Shubham Digole', profile: 'Web developer', description: 'fdsfdsfd' },
-    { img: 'https://avatars3.githubusercontent.com/u/25137297?s=400&u=bb73ea02096fc57a67136d041658606300da465f&v=4', name: 'Shubham Digole', profile: 'Web developer', description: 'fdsfdsfd' },
+    { img: 'https://image.shutterstock.com/image-photo/happy-male-teacher-dressed-smartly-450w-298428356.jpg', name: 'John Doe', profile: 'Web developer', description: 'fdsfdsfd' },
+    { img: 'https://image.shutterstock.com/image-photo/happy-male-teacher-dressed-smartly-450w-298428356.jpg', name: 'John Doe', profile: 'Web developer', description: 'fdsfdsfd' },
+    { img: 'https://image.shutterstock.com/image-photo/happy-male-teacher-dressed-smartly-450w-298428356.jpg', name: 'John Doe', profile: 'Web developer', description: 'fdsfdsfd' },
+    { img: 'https://image.shutterstock.com/image-photo/happy-male-teacher-dressed-smartly-450w-298428356.jpg', name: 'John Doe', profile: 'Web developer', description: 'fdsfdsfd' },
   ];
 
   feedback: Object[] = [
-    { img: 'assets/feedback.PNG', name: 'shubham digole', heading: 'Awesome School', Brief: 'This School is Awesome' },
-    { img: 'assets/feedback.PNG', name: 'shubham digole', heading: 'Awesome School', Brief: 'This School is Awesome' },
-    { img: 'assets/feedback.PNG', name: 'shubham digole', heading: 'Good Enviornment', Brief: 'This School is too good for childrens' },
-    { img: 'assets/feedback.PNG', name: 'shubham digole', heading: 'Awesome School', Brief: 'This School is Awesome' },
+    { img: 'assets/feedback.PNG', name: 'John Doe', heading: 'Awesome School', Brief: 'This School is Awesome' },
+    { img: 'assets/feedback.PNG', name: 'John Doe', heading: 'Awesome School', Brief: 'This School is Awesome' },
+    { img: 'assets/feedback.PNG', name: 'John Doe', heading: 'Good Enviornment', Brief: 'This School is too good for childrens' },
+    { img: 'assets/feedback.PNG', name: 'John Doe', heading: 'Awesome School', Brief: 'This School is Awesome' },
   ]
   buttonDisabled: boolean = true;
 
-
-  constructor(public dialog: MatDialog, private renderer: Renderer2) {}
+  constructor(public dialog: MatDialog, private renderer: Renderer2) { }
   prop: string = 'none';
 
   scrollToElement($element): void {
@@ -79,7 +75,8 @@ export class FrontendComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(popup, {
-      width: '500px'}).afterClosed().subscribe(result => {
+      width: '500px'
+    }).afterClosed().subscribe(result => {
       this.buttonDisabled = true;
     });
     console.log("dailog clicked");
@@ -96,8 +93,8 @@ export class FrontendComponent implements OnInit {
   }
 
   scroll = (): void => {
-    let topHeight= this.elementView.nativeElement.offsetTop;
-    
+    let topHeight = this.elementView.nativeElement.offsetTop;
+
     if (window.pageYOffset > topHeight) {
       this.renderer.addClass(this.elementView.nativeElement, 'fixed-top');
     } else {

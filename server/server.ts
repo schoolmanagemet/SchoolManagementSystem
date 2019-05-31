@@ -1,25 +1,22 @@
-const expre = require('express');
+
+
+
+const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const api = require('./routes/api');
+const users = require('./routes/login.route');
+const mongoose = require('./db');
 
 
-const { mongoose } = require('./db');
-// let employeeController = require('./controllers/employeeController')
+var app = express();
 
-
-let app = expre();
-
-app.use(expre.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use('/api',api);
-app.get('*', (req, res) => {
+app.use('/users',users);
 
-    res.sendFile('index.html',{root:path.join(__dirname,'public')})
-})
 
-app.listen(3000, () => console.log("server started successfully...."));
-
-// app.use("/employees",employeeController);
+app.listen(3000, () => console.log("server started successfully."));

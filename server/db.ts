@@ -1,10 +1,9 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-//import * as mongoose from 'mongoose';
+import { model,mongoose,Schema,connect } from "mongoose";
 
-let mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/SchoolManage',{ useNewUrlParser: true }, (err) => {
+connect('mongodb://localhost:27017/SchoolManage',{ useNewUrlParser: true }, (err) => {
     if(!err){
 
         console.log("connected successfully");
@@ -14,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/SchoolManage',{ useNewUrlParser: tru
 
         console.log("error error" + JSON.stringify(err));
         
-    }
+    } 
 
 })
 
