@@ -20,7 +20,7 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "cd ui && ng build",
+    "start": "cd ui && ng build --watch",
     "tsc": "node_modules/typescript/bin/tsc",
     "server": "tsc && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

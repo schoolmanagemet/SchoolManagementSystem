@@ -6,6 +6,10 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
+    path:'',
+    component: FrontendComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
 }
